@@ -1,0 +1,881 @@
+html {
+    scroll-behavior: smooth;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    width: 1170px;
+}
+header{
+    display: flex;
+    align-items: center;
+    background-color: #242424;
+    width: 100%;
+    height: 100px;
+}
+#Home {
+    width: 100%;
+    height: 90vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('../backgrounds/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 24px;
+    color: #FFFFFF;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    margin-left: 5%;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+.logo span {
+    color: #8E8E8E;
+    text-shadow: 0 0 10px rgba(142, 142, 142, 0.3);
+}
+
+header nav {
+    display: flex;
+    margin-left: 32%;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+header a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding: 10px 0;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+header a:hover {
+    color: #ffffff;
+
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+header a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #8E8E8E;
+    transform: translateX(-50%);
+
+    transition: width 0.3s ease;
+}
+
+header a:hover::after {
+    width: 100%;
+}
+#Home {
+    width: 100%;
+    height: 90vh;
+
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8) 20%, rgba(0, 0, 0, 0.3)),
+    url('../backgrounds/background.jpg');
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 10%;
+}
+
+.hero-text {
+    max-width: 600px;
+    text-align: left;
+}
+
+.main-title {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(40px, 6vw, 80px);
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 0.9;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.sub-title {
+    font-size: 18px;
+    color: #8E8E8E;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-left: 3px solid #ffffff;
+    padding-left: 15px;
+    margin-bottom: 30px;
+}
+
+.hero-line {
+    width: 100px;
+    height: 4px;
+    background-color: #ffffff;
+}
+
+header {
+    opacity: 0;
+    animation: fadeInHeader 1s ease-out forwards;
+}
+
+@keyframes fadeInHeader {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo span {
+    display: inline-block;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 2px rgba(255,255,255,0.1); }
+    to { text-shadow: 0 0 12px rgba(255,255,255,0.6); }
+}
+
+.main-title {
+    opacity: 0;
+    transform: scale(0.9);
+    filter: blur(10px);
+    animation: revealTitle 1.2s cubic-bezier(0.2, 0, 0.2, 1) forwards;
+    animation-delay: 0.4s;
+}
+
+@keyframes revealTitle {
+    to {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+}
+
+.sub-title {
+    opacity: 0;
+    animation: fadeInSub 1.5s ease-out forwards;
+    animation-delay: 1s;
+}
+
+@keyframes fadeInSub {
+    from {
+        opacity: 0;
+        transform: translateX(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.hero-line {
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    animation: lineGrow 1.2s ease-in-out forwards;
+    animation-delay: 1.4s;
+}
+
+@keyframes lineGrow {
+    to {
+        width: 80px;
+    }
+}
+
+#About {
+    width: 100%;
+    min-height: 400px;
+    background: linear-gradient(180deg, #000000 0%, #1a1a1a 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.About-logo {
+    display: flex;
+    color: #8E8E8E;
+    text-shadow: 0 0 10px rgba(142, 142, 142, 0.3);
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.About-logo  h2{
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: #FFFFFF;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+.About-logo  h2 span{
+    color: #8E8E8E;
+    text-shadow: 0 0 10px rgba(142, 142, 142, 0.3);
+}
+
+.About-text {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.About-text p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #cccccc;
+    max-width: 90%;
+    margin: 0 auto;
+}
+:root {
+    --bg-dark: #0a0a0a;        /* Խորը սև ֆոն */
+    --card-bg: #141414;       /* Մի փոքր ավելի բաց սև՝ տարրերի համար */
+    --text-main: #ffffff;     /* Սպիտակ տեքստ */
+    --text-dim: #a0a0a0;      /* Մոխրագույն տեքստ */
+    --accent: #8e8e8e;        /* Շեշտադրվող մոխրագույն */
+    --shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideRight {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+#delta-motors-core {
+    background-color: var(--bg-dark); /* Սև ֆոն */
+    padding: 100px 0;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+    color: var(--text-main);
+}
+
+.delta-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.delta-flex {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.delta-text {
+    flex: 1;
+    animation: slideRight 1s ease-out forwards;
+}
+
+.delta-tagline {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.delta-title {
+    font-size: 56px;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 0;
+    line-height: 1.1;
+}
+
+.delta-title span {
+    color: var(--accent);
+    font-weight: 300;
+}
+
+.delta-divider {
+    width: 60px;
+    height: 4px;
+    background: var(--text-main); /* Սպիտակ գիծ սև ֆոնի վրա */
+    margin: 25px 0;
+    animation: slideRight 1.2s ease-out forwards;
+}
+
+.delta-description {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--text-dim); /* Մեղմ մոխրագույն տեքստ */
+    margin-bottom: 40px;
+}
+
+
+.delta-btn-main {
+    padding: 15px 35px;
+    background: var(--text-main); /* Սպիտակ կոճակ */
+    color: var(--bg-dark);        /* Սև տեքստ կոճակի մեջ */
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.delta-btn-main:hover {
+    background: var(--accent);
+    transform: translateY(-3px);
+}
+
+.delta-btn-outline {
+    padding: 15px 35px;
+    background: transparent;
+    color: var(--text-main);
+    border: 1px solid var(--text-main);
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.delta-btn-outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.delta-visual {
+    flex: 1;
+    position: relative;
+    animation: fadeInUp 1.2s ease-out forwards;
+}
+
+.delta-img-frame {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(255,255,255,0.1); /* Նուրբ շրջանակ նկարի համար */
+}
+
+.delta-img-frame img {
+    width: 100%;
+    display: block;
+    filter: grayscale(40%) brightness(0.8); /* Մի փոքր ավելի մութ նկար՝ դարք ոճի համար */
+    transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1), filter 0.5s;
+}
+
+.delta-img-frame:hover img {
+    transform: scale(1.08);
+    filter: grayscale(0%) brightness(1); /* Մկնիկը պահելիս դառնում է պարզ ու գունավոր */
+}
+#car-cinema-section {
+    /* Ֆոնը մի փոքր ավելի բաց սև/մոխրագույն (#111111) */
+    background-color: #111111;
+    padding: 120px 0;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+    view-timeline: --sectionReveal block;
+}
+
+.cinema-flex {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+}
+
+.cinema-visual {
+    flex: 1.2;
+    animation: revealOnScroll linear forwards;
+    animation-timeline: --sectionReveal;
+    animation-range: entry 10% entry 80%;
+}
+
+.cinema-frame {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cinema-frame img {
+    width: 100%;
+    display: block;
+    filter: brightness(0.8);
+    transition: 0.6s ease;
+}
+
+.cinema-text {
+    flex: 1;
+    animation: revealOnScroll linear forwards;
+    animation-timeline: --sectionReveal;
+    animation-range: entry 10% entry 80%;
+}
+
+.delta-tagline {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #8e8e8e;
+    margin-bottom: 10px;
+}
+
+.delta-title {
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0 0 25px 0;
+}
+
+.delta-title span {
+    color: #8e8e8e;
+    font-weight: 300;
+}
+
+.delta-divider {
+    width: 60px;
+    height: 4px;
+    background: #ffffff;
+    margin-bottom: 25px;
+}
+
+.delta-description {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #a0a0a0;
+    margin-bottom: 40px;
+}
+
+/* Գնապիտակի սեկցիան (Price Box) - Լիարժեք սև ֆոնով */
+.price-box {
+    background-color: #000000;
+    padding: 30px;
+    border-left: 4px solid #ffffff;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.price-inner {
+    display: flex;
+    flex-direction: column;
+}
+
+.price-text {
+    font-size: 14px;
+    color: #a0a0a0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.amount {
+    font-size: 42px;
+    font-weight: 900;
+    color: #ffffff;
+}
+
+.delta-btn-main {
+    padding: 15px 35px;
+    background: #ffffff;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.delta-btn-main:hover {
+    background: #8e8e8e;
+    transform: translateY(-3px);
+}
+
+@keyframes revealOnScroll {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#first-project-section {
+    background-color: #111111;
+    padding: 100px 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.project-card {
+    display: flex;
+    background-color: #1a1a1a; /* Մուգ մոխրագույն քարտի համար */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    animation: revealIn 1s ease-out forwards;
+    view-timeline: --projectReveal block;
+    animation-timeline: --projectReveal;
+    animation-range: entry 10% entry 80%;
+}
+
+.project-image {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+    transition: 0.5s ease;
+}
+
+.project-tag {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: #ffffff;
+    color: #000;
+    padding: 5px 15px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.project-details {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.photo-service-box {
+    background-color: #252525; /* Մոխրագույն ֆոն գնի համար */
+    padding: 20px;
+    margin: 30px 0;
+    border-left: 3px solid #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.service-label {
+    color: #a0a0a0;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.service-price {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+@keyframes revealIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Hover էֆեկտ */
+.project-card:hover .project-image img {
+    filter: brightness(1);
+    transform: scale(1.05);
+}
+#contact-section {
+    background-color: #111111; /* Общий серый/черный фон */
+    padding: 100px 0;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    view-timeline: --contactReveal block;
+}
+
+.contact-header {
+    margin-bottom: 60px;
+    animation: revealUp 1s ease-out forwards;
+    animation-timeline: --contactReveal;
+    animation-range: entry 10% entry 50%;
+}
+
+.contact-header .delta-divider {
+    margin: 25px auto; /* Центрируем линию */
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.social-card {
+    background-color: #1a1a1a;
+    padding: 40px 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.4s cubic-bezier(0.2, 1, 0.3, 1);
+    animation: revealUp 1s ease-out forwards;
+    animation-timeline: --contactReveal;
+}
+
+/* Настраиваем порядок появления карточек */
+.social-card:nth-child(1) { animation-range: entry 15% entry 60%; }
+.social-card:nth-child(2) { animation-range: entry 25% entry 70%; }
+.social-card:nth-child(3) { animation-range: entry 35% entry 80%; }
+
+.social-icon {
+    color: #a0a0a0;
+    margin-bottom: 20px;
+    transition: 0.4s ease;
+}
+
+.social-name {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    transition: 0.4s ease;
+}
+
+.social-action {
+    color: #777777;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- Hover Эффекты с брендовыми цветами --- */
+
+.social-card:hover {
+    transform: translateY(-10px);
+    background-color: #222222;
+}
+
+/* Telegram Hover */
+.social-card.telegram:hover {
+    border-color: #0088cc;
+    box-shadow: 0 15px 40px rgba(0, 136, 204, 0.2);
+}
+.social-card.telegram:hover .social-icon {
+    color: #0088cc;
+    transform: scale(1.1);
+}
+
+/* YouTube Hover */
+.social-card.youtube:hover {
+    border-color: #ff0000;
+    box-shadow: 0 15px 40px rgba(255, 0, 0, 0.2);
+}
+.social-card.youtube:hover .social-icon {
+    color: #ff0000;
+    transform: scale(1.1);
+}
+
+/* TikTok Hover */
+.social-card.tiktok:hover {
+    border-color: #ffffff;
+    box-shadow: 0 15px 40px rgba(255, 255, 255, 0.1);
+}
+.social-card.tiktok:hover .social-icon {
+    color: #ffffff;
+    /* У TikTok специфический эффект, добавим легкую тень для кибер-вида */
+    filter: drop-shadow(2px 2px 0px #ff0050) drop-shadow(-2px -2px 0px #00f2fe);
+    transform: scale(1.1);
+}
+
+@keyframes revealUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* ==========================================================================
+   АДАПТИВНОСТЬ (MEDIA QUERIES)
+   ========================================================================== */
+
+/* Глобальное исправление для контейнера (чтобы не выходил за рамки экрана) */
+.container, .delta-container {
+    width: 100%;
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Для планшетов и небольших ноутбуков (до 1024px) --- */
+@media (max-width: 1024px) {
+    header nav {
+        margin-left: auto; /* Убираем жесткий отступ в 32% */
+    }
+
+    .delta-flex,
+    .cinema-flex {
+        gap: 40px;
+    }
+
+    .delta-title,
+    .cinema-title {
+        font-size: 42px;
+    }
+}
+
+/* --- Для планшетов (портретная ориентация) и больших телефонов (до 768px) --- */
+@media (max-width: 768px) {
+    /* Навигация и шапка */
+    header {
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .logo {
+        margin-left: 0;
+        margin-bottom: 15px;
+    }
+
+    header nav {
+        margin-left: 0;
+        padding: 0;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* Секция Home */
+    #Home {
+        padding-left: 20px;
+        padding-right: 20px;
+        justify-content: center;
+        background-position: 70% center; /* Смещаем фон, чтобы машина была в кадре */
+    }
+
+    .hero-text {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sub-title {
+        border-left: none;
+        border-bottom: 3px solid #ffffff;
+        padding-left: 0;
+        padding-bottom: 5px;
+    }
+
+    /* Превращаем строки в колонки (Flexbox) */
+    .delta-flex,
+    .cinema-flex,
+    .project-card {
+        flex-direction: column;
+    }
+
+    /* Меняем порядок: сначала текст, потом картинка (или наоборот по вашему вкусу) */
+    .cinema-visual,
+    .delta-visual,
+    .project-image {
+        width: 100%;
+        order: -1; /* Картинки будут сверху текста на мобилках */
+    }
+
+    /* Общие отступы секций делаем меньше */
+    #delta-motors-core,
+    #car-cinema-section,
+    #first-project-section,
+    #contact-section {
+        padding: 60px 0;
+    }
+
+    .project-details {
+        padding: 30px;
+    }
+
+    /* Шрифты и кнопки */
+    .main-title {
+        font-size: 40px;
+    }
+
+    .delta-title {
+        font-size: 36px;
+    }
+
+    .amount {
+        font-size: 32px;
+    }
+
+    .service-price {
+        font-size: 24px;
+    }
+}
+
+/* --- Для маленьких смартфонов (до 480px) --- */
+@media (max-width: 480px) {
+    /* Делаем кнопки на всю ширину для удобного нажатия пальцем */
+    .delta-btn-main,
+    .delta-btn-outline {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .photo-service-box {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        border-left: none;
+        border-top: 3px solid #ffffff;
+    }
+
+    .delta-description {
+        font-size: 16px;
+    }
+
+    .social-grid {
+        grid-template-columns: 1fr; /* Иконки соцсетей в один столбец */
+    }
+}
